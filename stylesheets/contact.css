@@ -1,0 +1,147 @@
+@import url("whitespace_reset.css");
+
+body {
+  font: normal 14px Helvetica, Arial, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  width: 95%;
+}
+
+header {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #cdbfe3;
+  background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+}
+
+header h1 {
+  padding: 0 0 10px 0;
+  font-size:  36px;
+  color: #ffffff;
+}
+
+input, #control_panel a {
+  font-size: 16px;
+  color: #563d7c;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+dl { padding: 0 0 20px 0; }
+dt { font-weight: bold; }
+dt, dd {
+  padding: 2px 0;
+
+}
+
+a {
+  margin-right: 10px;
+  padding: 6px 12px;
+  color: #563d7c;
+  text-decoration: none;
+  border: 1px solid #563d7c;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+li { vertical-align: top; }
+
+#edit {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+#edit h2 {
+  font: normal 30px Helvetica, Arial, sans-serif;
+  margin: 40px 0 20px 0;
+  padding: 0 0 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+form select {
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.tags {
+  display: inline-block;
+  vertical-align: top;
+}
+
+a.tags {
+  font-weight: normal;
+  margin: 0 5px 5px 0;
+  padding: 3px 6px;
+}
+
+a.cancel {
+  margin: 0;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  text-align: center;
+  border-radius: 8px;
+}
+
+form [type="submit"], dl.tags, a.cancel {
+  display: inline-block;
+  width: 47%;
+  padding: 12px 0;
+}
+
+form [type="submit"], a.cancel {
+  border: 1px solid #563d7c;
+  cursor: pointer;
+}
+
+form [type="submit"],
+dl + dl.tags {  margin-right: 5%; }
+dl.tags + dl.tags {  margin-right: 0; }
+
+#control_panel {
+  margin-bottom: 20px;
+  padding: 20px 0 30px 0;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+#control_panel input, #control_panel a { padding: 10px; }
+#control_panel a {
+  display: inline-block;
+  margin: 0 180px 0 80px;
+  color: #563d7c;
+  background-color: transparent;
+  border: 1px solid #563d7c;
+  cursor: pointer;
+}
+
+#control_panel a:hover, [type="submit"]:hover, a:hover, .active {
+  color: #ffffff;
+  background-color: #563d7c;
+}
+
+#contacts {
+  padding: 0 20px;
+}
+
+#contacts h2 {
+  font: normal 24px Helvetica, Arial, sans-serif;
+  margin: 20px 0;
+}
+
+#contacts li {
+  display: inline-block;
+  padding: 0 80px 20px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+

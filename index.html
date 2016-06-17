@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Contact Manager</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="stylesheets/contact.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="javascripts/handlebars-v3.0.0.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Contact Manager</h1>
+      <p>Using JavaScript, jQuery, and Handlebar</p>
+    </header>
+
+    <main>
+      <div id="container">
+        <div id="control_panel">
+          <a href="#">Add Contact</a>
+          <input type="text" id="query" name="query" placeholder="Search" />
+        </div>
+
+        <div id="contacts">
+          <ul></ul>
+        </div>
+      </div>
+      <div id="edit"></div>
+    </main>
+
+    <script id="contacts_template" type="text/x-handlebars">
+      {{#each contacts}}
+      {{> contact}}
+      {{/each}}
+    </script>
+
+    <script id="contact_template" type="text/x-handlebars">
+      <li data-id="{{id}}">
+        <h2>{{name}}</h2>
+        <dl>
+          <dt>Phone Number:</dt>
+          <dd>{{number}}</dd>
+          <dt>Email:</dt>
+          <dd>{{email}}</dd>
+          <dt>Tags:</dt>
+          <dd>
+          {{#each tags}}
+            <a href="#" class="tags">{{this}}</a>
+          {{/each}}
+          </dd>
+        </dl>
+        <div>
+          <a href="#" class="edit">Edit</a>
+          <a href="#" class="delete">Delete</a>
+        </div>
+      </li>
+    </script>
+
+    <script id="contact_edit" type="text/x-handlebars">
+      <h2>Create Contact</h2>
+      <form action="" method="post">
+        <fieldset>
+          <dl>
+            <dt>
+              <label for="contact_name">Full name:</label>
+            </dt>
+            <dd>
+              <input type="hidden" name="contact_id" value="{{id}}">
+              <input type="text" name="contact_name" id="contact_name" value="{{name}}" required>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <label for="contact_email">Email address:</label>
+            </dt>
+            <dd>
+              <input type="email" name="contact_email" id="contact_email" value="{{email}}" required>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <label for="contact_number">Telephone number:</label>
+            </dt>
+            <dd>
+              <input type="text" name="contact_number" id="contact_number" value="{{number}}" required>
+            </dd>
+          </dl>
+          <dl class="tags">
+            <dt>
+              <label for="tags">Tags (hold ctrl to select multiple tags)</label>
+            </dt>
+            <dd>
+              <select name="tags" multiple>
+              {{#select tags}}
+                {{#each all_tags}}
+                {{> tag}}
+                {{/each}}
+              {{/select}}
+              </select>
+            </dd>
+          </dl>
+          <dl class="tags">
+            <dt>
+              <label for="new_tag">Create New Tag</label>
+            </dt>
+            <dd>
+              <input type="text" name="new_tag" id="new_tag">
+            </dd>
+          </dl>
+          <dl>
+            <dd>
+              <input type="submit" value="Submit">
+              <a href="#" class="cancel">Cancel</a>
+            </dd>
+          </dl>
+        </fieldset>
+      </form>
+    </script>
+
+    <script id="tags_template" type="text/x-handlebars">
+      {{#each tags}}
+      {{> tag}}
+      {{/each}}
+    </script>
+
+    <script id="tag_template" type="text/x-handlebars">
+      <option value="{{tag}}">{{tag}}</option>
+    </script>
+
+    <script src="javascripts/contact.js"></script>
+  </body>
+</html>
